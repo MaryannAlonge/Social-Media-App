@@ -6,7 +6,7 @@ const messagesNotification = document.querySelector
   ('#messages-notifications');
 const messages = document.querySelector('.messages');
 const message = messages.querySelectorAll('.message')
-const messageSearch = messages.querySelector('#message-search')
+const messageSearch = document.querySelector('#message-search')
 
 // THEME
 const theme = document.querySelector('#theme');
@@ -67,7 +67,7 @@ messageSearch.addEventListener('keyup', searchMessage)
 
 // highlight messages card when messages menu item is clicked
 messagesNotification.addEventListener('click', () => {
-  messages.style.boxShadow = '0 0 1rem var(----color-primary)'
+  messages.style.boxShadow = '0 0 1rem var(--color-primary)'
   // hide messages count when clicked
   messagesNotification.querySelector('.notification-count').
     style.display = 'none'
@@ -142,14 +142,14 @@ fontSizes.forEach(size => {
 // remove active class from colors
 const changeActiveColorClass = () => {
   colorPalette.forEach(colorPicker => {
-    colorPicker.classList.remove('ative')
+    colorPicker.classList.remove('active')
   })
 }
 
 // change primary colors
 colorPalette.forEach(color => {
   color.addEventListener('click', () => {
-    let  primaryHue; 
+    let  primary = ""; 
     // remove active class from colors
     changeActiveColorClass()
 
@@ -166,7 +166,7 @@ colorPalette.forEach(color => {
     }
     color.classList.add('active')
 
-    root.style.setProperty(' --primary-color-hue', primaryHue)
+    root.style.setProperty('--primary-color-hue', primaryHue)
   })
 })
 
