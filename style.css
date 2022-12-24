@@ -153,6 +153,10 @@ main .container .left{
   top: var(--sticky-top-left);
 }
 
+nav .container h2 .prim {
+  color: var(--color-primary);
+}
+
 main .container .left .profile{
   padding: var(--card-padding);
   background: var(--color-white);
